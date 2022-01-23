@@ -1,10 +1,10 @@
 # Sample-HMM-GMM
 簡易的隱藏式馬可夫模型(語音辨識)
 
-# Introduction
+## Introduction
 ### 建置中...
 
-# Installation
+## Installation
 ```bash
 # Step 1 使用 git 下載專案
 git clone https://github.com/Amiannn/Sample-HMM-GMM.git
@@ -18,8 +18,8 @@ conda activate hmm
 pip3 install -r requirements.txt
 ```
 
-# Train
+## Train
 ### 建置中...
 
-# Test
+## Test
 ### 建置中...
