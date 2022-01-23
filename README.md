@@ -17,3 +17,9 @@ conda activate hmm
 # Step 3 安裝套件
 pip3 install -r requirements.txt
 ```
+
+# Train
+### 建置中...
+
+# Test
+### 建置中...
