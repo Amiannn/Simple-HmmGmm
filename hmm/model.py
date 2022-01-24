@@ -5,12 +5,13 @@ import numpy as np
 from hmm.hmm import HMM
 
 class ClassificationModel():
-    def __init__(self, states_length, num_labels):
-        self.reset_model(states_length, num_labels, None)
+    def __init__(self, states_length, mixtures, num_labels):
+        self.reset_model(states_length, mixtures, num_labels, None)
 
-    def reset_model(self, states_length, num_labels, index2label):
-        self.hmms = [HMM(states_length) for _ in range(num_labels)]
+    def reset_model(self, states_length, mixtures, num_labels, index2label):
+        self.hmms = [HMM(states_length, mixtures) for _ in range(num_labels)]
         self.index2label = index2label
+        self.mixtures    = mixtures
 
     def save(self, path):
         if not os.path.isdir(path):
@@ -18,6 +19,7 @@ class ClassificationModel():
 
         config = {
             'states_length': self.hmms[0].states.length,
+            'mixtures'     : self.mixtures,
             'num_labels'   : len(self.hmms),
             'index2label'  : self.index2label
         }
@@ -38,6 +40,7 @@ class ClassificationModel():
         # reset model
         self.reset_model(
             config['states_length'],
+            config['mixtures'],
             config['num_labels'],
             config['index2label']
         )
@@ -51,7 +54,7 @@ class ClassificationModel():
 
         for index in range(len(Y)):
             label = Y[index]
-            observations_dict[label] = observations_dict[label] + X[index]
+            observations_dict[label].append(X[index])
 
         for index, label in enumerate(observations_dict):
             observations = observations_dict[label]

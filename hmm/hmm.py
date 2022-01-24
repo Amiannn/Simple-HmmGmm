@@ -4,8 +4,8 @@ import numpy as np
 from hmm.states import States
 
 class HMM():
-    def __init__(self, states_length):
-        self.states = States(states_length, mixtures=2)
+    def __init__(self, states_length, mixtures):
+        self.states = States(states_length, mixtures)
         np.seterr(divide = 'ignore')
 
     def _logaddexp(self, a):

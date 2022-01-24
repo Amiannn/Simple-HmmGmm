@@ -19,7 +19,7 @@ if __name__ == '__main__':
             -1, 1
         ) for i in range(20)
     ]
-
+    print(observationsA[0].shape)
     train_A = observationsA[:10]
     train_B = observationsB[:10]
 
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     model_path = os.path.join('outputs', 'mymodel')
     
-    model = ClassificationModel(states_length=5, num_labels=2)
+    model = ClassificationModel(states_length=5, mixtures=3, num_labels=2)
     model.load(model_path)
 
     print(test(model, [test_B[0]]))
