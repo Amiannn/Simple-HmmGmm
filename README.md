@@ -23,3 +23,8 @@ pip3 install -r requirements.txt
 
 ## Test
 ### 建置中...
+
+## Reference
+- [Isolated-Spoken-Digit-Recognition](https://github.com/SIFANWU/Isolated-Spoken-Digit-Recognition.git)
+- [Speech Processing for Machine Learning](https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html)
+- [HMM-GMM](https://zhuanlan.zhihu.com/p/258826836)

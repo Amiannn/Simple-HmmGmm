@@ -1,3 +1,7 @@
 *pycache*
 .vscode
 outputs/*
+datasets/*
+
+!outputs/.gitkeep
+!datasets/.gitkeep

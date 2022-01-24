@@ -4,7 +4,7 @@ import numpy as np
 
 from hmm.hmm import HMM
 
-class Model():
+class ClassificationModel():
     def __init__(self, states_length, num_labels):
         self.reset_model(states_length, num_labels, None)
 

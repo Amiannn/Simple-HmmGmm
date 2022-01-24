@@ -1,7 +1,7 @@
 import os
 import numpy as np
 
-from hmm.model import Model
+from hmm.model import ClassificationModel
 
 def test(model, X):
     result = model.predict(X)
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     model_path = os.path.join('outputs', 'mymodel')
     
-    model = Model(states_length=5, num_labels=2)
+    model = ClassificationModel(states_length=5, num_labels=2)
     model.load(model_path)
 
-    print(test(model, test_A + test_B))
+    print(test(model, [test_B[0]]))

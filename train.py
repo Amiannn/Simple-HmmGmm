@@ -1,7 +1,7 @@
 import os
 import numpy as np
 
-from hmm.model import Model
+from hmm.model import ClassificationModel
 
 def train(model, X, Y, epochs):
     model.train(X, Y, epochs)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     test_A  = observationsA[10:]
     test_B  = observationsB[10:]
 
-    model = Model(states_length=5, num_labels=2)
+    model = ClassificationModel(states_length=5, num_labels=2)
     
     train(model, [train_A, train_B], ['A', 'B'], 10)
     save_path = os.path.join('outputs', 'mymodel')
