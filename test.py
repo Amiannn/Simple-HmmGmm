@@ -1,29 +1,34 @@
+import os
 import numpy as np
 
-from hmm.hmm import HMM
+from hmm.model import Model
 
+def test(model, X):
+    result = model.predict(X)
+    return result
 
-hmm = HMM(5)
+if __name__ == '__main__':
+    observationsA = [
+        ((np.sin(np.linspace(np.random.random(1)[0], np.pi + np.random.random(1)[0], 100)) + 1) / 2).reshape(
+            -1, 1
+        ) for i in range(20)
+    ]
 
-x = np.sin(np.linspace(0, np.pi, 100)) + 1
+    observationsB = [
+        ((np.cos(np.linspace(np.random.random(1)[0], np.pi + np.random.random(1)[0], 100)) + 1) / 2).reshape(
+            -1, 1
+        ) for i in range(20)
+    ]
 
-xs = np.array_split(x, hmm.states.length)
+    train_A = observationsA[:10]
+    train_B = observationsB[:10]
 
-for index, x in enumerate(xs):
-    x = x.reshape(-1, 1)
-    hmm.states.emission(index).fit(x)
+    test_A  = observationsA[10:]
+    test_B  = observationsB[10:]
 
-sequence = hmm.generate(100)
+    model_path = os.path.join('outputs', 'mymodel')
+    
+    model = Model(states_length=5, num_labels=2)
+    model.load(model_path)
 
-
-x = []
-
-for state, em in sequence:
-    x.append(em[0])
-    print(state, end='')
-print()
-
-x  = np.array(x).reshape(-1, 1)
-print(x.shape)
-
-print(hmm.viterbi(x))
+    print(test(model, test_A + test_B))

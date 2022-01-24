@@ -1,12 +1,12 @@
+import os
 import numpy as np
 
-from hmm.hmm import HMM
+from hmm.model import Model
 
-
-def train(model, observation):
+def train(model, X, Y, epochs):
+    model.train(X, Y, epochs)
+    return model
     
-    ...
-
 if __name__ == '__main__':
     observationsA = [
         ((np.sin(np.linspace(np.random.random(1)[0], np.pi + np.random.random(1)[0], 100)) + 1) / 2).reshape(
@@ -20,26 +20,14 @@ if __name__ == '__main__':
         ) for i in range(20)
     ]
 
-
     train_A = observationsA[:10]
     train_B = observationsB[:10]
 
     test_A  = observationsA[10:]
     test_B  = observationsB[10:]
 
-    hmms = [HMM(5) for i in range(10)]
-
-    hmms[0].train(train_A, 10)
-    hmms[1].train(train_B, 10)
+    model = Model(states_length=5, num_labels=2)
     
-    scoreAA = np.sum([hmms[0].viterbi(test)[0] for test in test_A]) / 10
-    scoreAB = np.sum([hmms[0].viterbi(test)[0] for test in test_B]) / 10
-
-    scoreBA = np.sum([hmms[1].viterbi(test)[0] for test in test_A]) / 10
-    scoreBB = np.sum([hmms[1].viterbi(test)[0] for test in test_B]) / 10
-
-    print(scoreAA)
-    print(scoreAB)
-
-    print(scoreBA)
-    print(scoreBB)
+    train(model, [train_A, train_B], ['A', 'B'], 10)
+    save_path = os.path.join('outputs', 'mymodel')
+    model.save(save_path)

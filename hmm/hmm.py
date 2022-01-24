@@ -1,3 +1,4 @@
+import os
 import numpy as np
 
 from hmm.states import States
@@ -12,6 +13,14 @@ class HMM():
         for i in range(a.shape[0]):
             value = np.logaddexp(a[i], value)
         return value
+
+    def save(self, path):
+        if not os.path.isdir(path):
+            os.makedirs(path)
+        self.states.save(path)
+
+    def load(self, path):
+        self.states.load(path)
 
     def generate(self, sequence_length):
         pi = np.exp(self.states.initials_log)
