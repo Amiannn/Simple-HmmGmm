@@ -70,6 +70,6 @@ class ClassificationModel():
                 prob = self.hmms[index].viterbi(x)[0]
                 probs.append([prob, index])
             probs = sorted(probs, reverse=True, key=lambda p: p[0])
-            predict_label = self.index2label[str(probs[0][1])]
+            predict_label = [[self.index2label[str(index)], prob] for prob, index in probs]
             result.append(predict_label)
         return result

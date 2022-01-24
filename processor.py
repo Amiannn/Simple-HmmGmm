@@ -15,8 +15,8 @@ def dataloader(path):
         fs_hz, signal = wav.read(filepath)
 
         # get sound feature and label
-        # data  = feat.compute_mfcc(signal, fs_hz)
-        data  = feat.compute_fbank(signal, fs_hz)
+        data  = feat.compute_mfcc(signal, fs_hz)
+        # data  = feat.compute_fbank(signal, fs_hz)
         label = filename.split('_')[0]
 
         datas.append(data)

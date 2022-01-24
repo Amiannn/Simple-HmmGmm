@@ -10,23 +10,6 @@ def train(model, X, Y, epochs):
     return model
     
 if __name__ == '__main__':
-    # observationsA = [
-    #     ((np.sin(np.linspace(np.random.random(1)[0], np.pi + np.random.random(1)[0], 100)) + 1) / 2).reshape(
-    #         -1, 1
-    #     ) for i in range(20)
-    # ]
-
-    # observationsB = [
-    #     ((np.cos(np.linspace(np.random.random(1)[0], np.pi + np.random.random(1)[0], 100)) + 1) / 2).reshape(
-    #         -1, 1
-    #     ) for i in range(20)
-    # ]
-
-    # train_A = observationsA[:10]
-    # train_B = observationsB[:10]
-
-    # test_A  = observationsA[10:]
-    # test_B  = observationsB[10:]
     dataset_path = './datasets/digit-recogntion'
     train_path   = os.path.join(dataset_path, 'train')
 
