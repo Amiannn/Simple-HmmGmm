@@ -1,8 +1,0 @@
-{
-    "states_length": 5,
-    "num_labels": 2,
-    "index2label": {
-        "0": "A",
-        "1": "B"
-    }
-}
