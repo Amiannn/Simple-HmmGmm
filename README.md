@@ -1,7 +1,8 @@
 # Sample-HMM-GMM
 簡易的隱藏式馬可夫模型(語音辨識)
-![](https://i.imgur.com/TsV3flf.png)
+
 ## Introduction
+![](https://i.imgur.com/TsV3flf.png)
 ### 建置中...
 
 ## Installation
