@@ -18,6 +18,7 @@ pip3 install -r requirements.txt
 
 ## Dataset
 - [Free Spoken Digit Dataset (FSDD)](https://github.com/Jakobovski/free-spoken-digit-dataset)
+- 將FSDD下載之後放入`datasets`的資料夾中
 
 ## Train
 ```bash
@@ -30,6 +31,7 @@ python3 eval.py
 ```
 
 ## Reference
+- [Digital Speech Processing](http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S204)
 - [Isolated-Spoken-Digit-Recognition](https://github.com/SIFANWU/Isolated-Spoken-Digit-Recognition.git)
 - [Speech Processing for Machine Learning](https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html)
 - [HMM-GMM](https://zhuanlan.zhihu.com/p/258826836)
