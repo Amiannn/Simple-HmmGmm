@@ -143,7 +143,7 @@ class HMM():
         state_q     = np.zeros(obs_length, dtype=np.int32)
         state_q[-1] = self.states.length - 1
 
-        # back tracing
+        # back tracking
         for t in range(obs_length - 1, 0, -1):
             state_q[t - 1] = bp_matrix[state_q[t], t]
 

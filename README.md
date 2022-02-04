@@ -1,9 +1,6 @@
 # Sample-HMM-GMM
 簡易的隱藏式馬可夫模型(語音辨識)
-
-## Introduction
 ![](https://i.imgur.com/UYkgLIv.png)
-### 建置中...
 
 ## Installation
 ```bash
@@ -19,11 +16,18 @@ conda activate hmm
 pip3 install -r requirements.txt
 ```
 
-## Train
-### 建置中...
+## Dataset
+- [Free Spoken Digit Dataset (FSDD)](https://github.com/Jakobovski/free-spoken-digit-dataset)
 
-## Test
-### 建置中...
+## Train
+```bash
+python3 train.py
+```
+
+## Eval
+```bash
+python3 eval.py
+```
 
 ## Reference
 - [Isolated-Spoken-Digit-Recognition](https://github.com/SIFANWU/Isolated-Spoken-Digit-Recognition.git)
