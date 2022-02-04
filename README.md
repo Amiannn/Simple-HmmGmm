@@ -2,7 +2,7 @@
 簡易的隱藏式馬可夫模型(語音辨識)
 
 ## Introduction
-![](https://i.imgur.com/TsV3flf.png)
+![](https://i.imgur.com/UYkgLIv.png)
 ### 建置中...
 
 ## Installation
