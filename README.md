@@ -1,4 +1,4 @@
-# Sample-HMM-GMM
+# Simple-HMM-GMM
 簡易的隱藏式馬可夫模型(語音辨識)
 ![](https://i.imgur.com/UYkgLIv.png)
 
