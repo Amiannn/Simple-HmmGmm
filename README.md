@@ -1,4 +1,4 @@
-# Simple-HMM-GMM
+# Build a simple HMM-GMM from scratch🔥
 簡易的隱藏式馬可夫模型(語音辨識)
 ![](https://i.imgur.com/UYkgLIv.png)
 
